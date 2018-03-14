@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.time.ZonedDateTime.now;
-import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class Exercise_01 {
@@ -33,7 +32,7 @@ public class Exercise_01 {
 	private final Todo laundry = new Todo("Laundry", Importance.SOMEWHAT, now().plusDays(1));
 	private final Todo groceries = new Todo("Groceries", Importance.VERY, now().plusDays(2));
 
-	private final TodoList list = new TodoList(asList(laundry, groceries, taxes));
+	private final TodoList list = new TodoList(Arrays.asList(laundry, groceries, taxes));
 
 	@Test
 	void todosWithImportance() {
@@ -41,11 +40,11 @@ public class Exercise_01 {
 		assertThat(filtered).containsOnly(laundry);
 	}
 
-//	@Test
-//	void todosMoreImportantThan() {
-//		List<Todo> filtered = list.todosMoreImportantThan(Importance.A_LITTLE);
-//		assertThat(filtered).containsOnly(laundry, groceries);
-//	}
+	@Test
+	void todosMoreImportantThan() {
+		List<Todo> filtered = list.todosMoreImportantThan(Importance.A_LITTLE);
+		assertThat(filtered).containsOnly(laundry, groceries);
+	}
 
 	@Test
 	void todosDueBy() {
@@ -53,10 +52,10 @@ public class Exercise_01 {
 		assertThat(filtered).containsOnly(laundry, groceries);
 	}
 
-//	@Test
-//	void todosDueAfter() {
-//		List<Todo> filtered = list.todosDueAfter(now().plusDays(3));
-//		assertThat(filtered).containsOnly(taxes);
-//	}
+	@Test
+	void todosDueAfter() {
+		List<Todo> filtered = list.todosDueAfter(now().plusDays(3));
+		assertThat(filtered).containsOnly(taxes);
+	}
 
 }

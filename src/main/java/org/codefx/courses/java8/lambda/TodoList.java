@@ -15,27 +15,53 @@ public class TodoList {
 	}
 
 	public List<Todo> todosWithImportance(Importance importance) {
-		List<Todo> filtered = new ArrayList<>();
-		for (Todo todo : todos)
-			if(todo.importance() == importance)
-				filtered.add(todo);
-		return filtered;
+		return todosThatPass(new TodoFilter() {
+			@Override
+			public boolean passes(Todo todo) {
+				return todo.importance() == importance;
+			}
+		});
 	}
 
 	public List<Todo> todosMoreImportantThan(Importance importance) {
-		throw new RuntimeException("Not yet implemented.");
+		return todosThatPass(new TodoFilter() {
+			@Override
+			public boolean passes(Todo todo) {
+				return todo.importance().ordinal() > importance.ordinal();
+			}
+		});
 	}
 
 	public List<Todo> todosDueBy(ZonedDateTime time) {
+		return todosThatPass(new TodoFilter() {
+			@Override
+			public boolean passes(Todo todo) {
+				return todo.due().isBefore(time);
+			}
+		});
+	}
+
+	public List<Todo> todosDueAfter(ZonedDateTime time) {
+		return todosThatPass(new TodoFilter() {
+			@Override
+			public boolean passes(Todo todo) {
+				return todo.due().isAfter(time);
+			}
+		});
+	}
+
+	private List<Todo> todosThatPass(TodoFilter filter) {
 		List<Todo> filtered = new ArrayList<>();
 		for (Todo todo : todos)
-			if(todo.due().isBefore(time))
+			if(filter.passes(todo))
 				filtered.add(todo);
 		return filtered;
 	}
 
-	public List<Todo> todosDueAfter(ZonedDateTime time) {
-		throw new RuntimeException("Not yet implemented.");
+	interface TodoFilter {
+
+		boolean passes(Todo todo);
+
 	}
 
 }
