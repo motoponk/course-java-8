@@ -12,12 +12,7 @@ public class Exercise_02 {
 	 *       with lambda expressions
 	 */
 
-	private final IntFilter evenFilter = new IntFilter() {
-		@Override
-		public boolean pass(int integer) {
-			return integer % 2 == 0;
-		}
-	};
+	private final IntFilter evenFilter = integer -> integer % 2 == 0;
 
 	private interface IntFilter {
 
@@ -25,12 +20,7 @@ public class Exercise_02 {
 
 	}
 
-	private final IntIncrementer twoIncrementer = new IntIncrementer() {
-		@Override
-		public int increment(int integer) {
-			return integer + 2;
-		}
-	};
+	private final IntIncrementer twoIncrementer = integer -> integer + 2;
 
 	private interface IntIncrementer {
 
@@ -38,12 +28,7 @@ public class Exercise_02 {
 
 	}
 
-	private final IntPrinter sysOutPrinter = new IntPrinter() {
-		@Override
-		public void print(int integer) {
-			System.out.println(integer);
-		}
-	};
+	private final IntPrinter sysOutPrinter = integer -> System.out.println(integer);
 
 	private interface IntPrinter {
 
