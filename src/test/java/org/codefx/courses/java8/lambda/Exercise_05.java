@@ -24,6 +24,23 @@ public class Exercise_05 {
 	 */
 
 	private Consumer<String> printString = s -> print(s);
+	private Consumer<Integer> printInteger = i -> print(i);
+	private IntConsumer printInt = i -> print(i);
+	private Consumer<Float> printFloat = f -> print(f);
+	private Consumer<Float> printFlt = f -> print((float) f);
+
+	private IntSupplier answer = () -> answer();
+	private Function<Todo, String> extractDescription = todo -> extractDescription(todo);
+	private UnaryOperator<String> duplicate = s -> duplicate(s);
+	private DoubleBinaryOperator plus = (d1, d2) -> plus(d1, d2);
+
+	private Supplier<Todo> withoutDescription = () -> withoutDescription();
+	private Function<String, Todo> withDescription = description -> withDescription(description);
+	private BiFunction<String, ZonedDateTime, Todo> withDescriptionAndDueDate =
+			(description, due) -> withDescriptionAndDueDate(description, due);
+	// there is no TriFunction for withDescriptionImportanceAndDueDate(description, importance, due)
+	private Predicate<Todo> isDescriptionEmpty = todo -> isDescriptionEmpty(todo);
+	private BiPredicate<Todo, Integer> isDescriptionTooLong = (todo, maxLength)-> isDescriptionTooLong(todo, maxLength);
 
 	private void print(String s) {
 		System.out.println(s);
