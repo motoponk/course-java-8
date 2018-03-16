@@ -16,14 +16,14 @@ public class Exercise_07 {
 	private Type type = Type.create("");
 
 	// static method
-	private Function<String, Type> create = field -> Type.create(field);
+	private Function<String, Type> create = Type::create;
 	// constructor
-	private Function<String, Type> constructor = field -> new Type(field);
+	private Function<String, Type> constructor = Type::new;
 	// on existing object
-	private Supplier<String> getFieldFromType = () -> type.getField();
+	private Supplier<String> getFieldFromType = type::getField;
 	// on first parameter
-	private Function<Type, String> getField = _type -> _type.getField();
-	private BiFunction<Type, Integer, String> appendedField = (_type, parameter) -> _type.appendedField(parameter);
+	private Function<Type, String> getField = Type::getField;
+	private BiFunction<Type, Integer, String> appendedField = Type::appendedField;
 
 	private static class Type {
 
@@ -46,5 +46,17 @@ public class Exercise_07 {
 		}
 
 	}
+
+
+	private Todo todo = new Todo("");
+
+	// static method
+	// `Todo` has no static method
+	// constructor
+	private Function<String, Todo> constructorTodo = Todo::new;
+	// on existing object
+	private Supplier<String> getDescriptionFromTodo = todo::description;
+	// on first parameter
+	private Function<Todo, String> getDescription = Todo::description;
 
 }
