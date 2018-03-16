@@ -1,6 +1,7 @@
 package org.codefx.courses.java8.lambda;
 
 import org.codefx.courses.java8.lambda.Todo.Importance;
+import org.codefx.courses.java8.lambda.TodoList.TodoFilter;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -33,31 +34,32 @@ public class Exercise_04 {
 	private final Todo laundry = new Todo("Laundry", Importance.SOMEWHAT, now().plusDays(1));
 	private final Todo groceries = new Todo("Groceries", Importance.VERY, now().plusDays(2));
 
-//	private final TodoList list = new TodoList(asList(laundry, groceries, taxes), now().plusDays(3));
+	private final TodoList list = new TodoList(asList(laundry, groceries, taxes), now().plusDays(3));
 
-//	@Test
-//	void dueBeforeNextDeadline() {
-//		TodoFilter filter = list.dueBeforeNextDeadline();
-//		List<Todo> filtered = list.todosThatPass(filter);
-//
-//		assertThat(filtered).containsOnly(laundry, groceries);
-//	}
+	@Test
+	void dueBeforeNextDeadline() {
+		TodoFilter filter = list.dueBeforeNextDeadline();
+		List<Todo> filtered = list.todosThatPass(filter);
 
-//	@Test
-//	void dueBefore() {
-//		TodoFilter filter = list.dueBefore(now().plusDays(1).plusHours(12));
-//		List<Todo> filtered = list.todosThatPass(filter);
-//
-//		assertThat(filtered).containsOnly(laundry);
-//	}
+		assertThat(filtered).containsOnly(laundry, groceries);
+	}
 
-//	@Test
-//	void dueInNextThreeDays() {
-//		// three days counting from time of method call, not TodoFilter invocation!
-//		TodoFilter filter = list.dueInNextThreeDays();
-//		List<Todo> filtered = list.todosThatPass(filter);
-//
-//		assertThat(filtered).containsOnly(laundry, groceries);
-//	}
+
+	@Test
+	void dueBefore() {
+		TodoFilter filter = list.dueBefore(now().plusDays(1).plusHours(12));
+		List<Todo> filtered = list.todosThatPass(filter);
+
+		assertThat(filtered).containsOnly(laundry);
+	}
+
+	@Test
+	void dueInNextThreeDays() {
+		// three days counting from time of method call, not TodoFilter invocation!
+		TodoFilter filter = list.dueInNextThreeDays();
+		List<Todo> filtered = list.todosThatPass(filter);
+
+		assertThat(filtered).containsOnly(laundry, groceries);
+	}
 
 }
