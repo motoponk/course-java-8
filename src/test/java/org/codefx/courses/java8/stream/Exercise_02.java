@@ -21,50 +21,50 @@ public class Exercise_02 {
 	 *      to `List` makes it easier to avoid the custom made API.
 	 */
 
-//	private final LambdaListStreams streams = new LambdaListStreams();
-//
-//	@Test
-//	void duplicateStrings() {
-//		LambdaList<String> list = LambdaList.create("c", "o", "d", "e", "fx");
-//		List<String> duplicated = streams.duplicateStrings(list);
-//		assertThat(duplicated).containsOnly("cc", "oo", "dd", "ee", "fxfx");
-//	}
-//
-//	@Test
-//	void concatenateStrings() {
-//		LambdaList<String> list = LambdaList.create("c", "o", "d", "e", "fx");
-//		String concatenated = streams.concatenateStrings(list);
-//		assertThat(concatenated).isEqualTo("codefx");
-//	}
-//
-//	@Test
-//	void getLongDescriptions() {
-//		LambdaList<Todo> todos = LambdaList
-//				.create(new Todo("Short desc"), new Todo("This is a long description"));
-//
-//		List<String> longDescriptions = streams.getLongDescriptions(todos, 15);
-//
-//		assertThat(longDescriptions).containsExactly("This is a long description");
-//	}
-//
-//	@Test
-//	void noOfImportantTodos() {
-//		LambdaList<Todo> todos = LambdaList.create(
-//				new Todo("", Importance.A_LITTLE),
-//				new Todo("", Importance.VERY),
-//				new Todo("", Importance.VERY),
-//				new Todo("", Importance.SOMEWHAT));
-//
-//		int noOfImportantTodos = streams.noOfImportantTodos(todos, Importance.VERY);
-//
-//		assertThat(noOfImportantTodos).isEqualTo(2);
-//	}
-//
-//	@Test
-//	void charsToIntSum() {
-//		LambdaList<String> list = LambdaList.create("c", "o", "d", "e", "fx");
-//		int sum = streams.charsToIntSum(list);
-//		assertThat(sum).isEqualTo(63);
-//	}
+	private final LambdaListStreams streams = new LambdaListStreams();
+
+	@Test
+	void duplicateStrings() {
+		LambdaList<String> list = LambdaList.create("c", "o", "d", "e", "fx");
+		List<String> duplicated = streams.duplicateStrings(list);
+		assertThat(duplicated).containsOnly("cc", "oo", "dd", "ee", "fxfx");
+	}
+
+	@Test
+	void concatenateStrings() {
+		LambdaList<String> list = LambdaList.create("c", "o", "d", "e", "fx");
+		String concatenated = streams.concatenateStrings(list);
+		assertThat(concatenated).isEqualTo("codefx");
+	}
+
+	@Test
+	void getLongDescriptions() {
+		LambdaList<Todo> todos = LambdaList
+				.create(new Todo("Short desc"), new Todo("This is a long description"));
+
+		List<String> longDescriptions = streams.getLongDescriptions(todos, 15);
+
+		assertThat(longDescriptions).containsExactly("This is a long description");
+	}
+
+	@Test
+	void noOfImportantTodos() {
+		LambdaList<Todo> todos = LambdaList.create(
+				new Todo("", Importance.A_LITTLE),
+				new Todo("", Importance.VERY),
+				new Todo("", Importance.VERY),
+				new Todo("", Importance.SOMEWHAT));
+
+		int noOfImportantTodos = streams.noOfImportantTodos(todos, Importance.VERY);
+
+		assertThat(noOfImportantTodos).isEqualTo(2);
+	}
+
+	@Test
+	void charsToIntSum() {
+		LambdaList<String> list = LambdaList.create("c", "o", "d", "e", "fx");
+		int sum = streams.charsToIntSum(list);
+		assertThat(sum).isEqualTo(63);
+	}
 
 }
