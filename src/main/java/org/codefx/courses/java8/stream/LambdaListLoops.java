@@ -3,51 +3,33 @@ package org.codefx.courses.java8.stream;
 import org.codefx.courses.java8.lambda.Todo;
 import org.codefx.courses.java8.lambda.Todo.Importance;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LambdaListLoops {
 
 	public List<String> duplicateStrings(LambdaList<String> list) {
-		List<String> duplicated = new ArrayList<>();
-		for (String s : list)
-			duplicated.add(s + s);
-		return duplicated;
+		return list.map(s -> s +  s);
 	}
 
 	public String concatenateStrings(LambdaList<String> list) {
-		String concatenated = "";
-		for (String s : list)
-			concatenated += s;
-		return concatenated;
+		return list.reduce("", (s1, s2) -> s1 +  s2);
 	}
 
 	public List<String> getLongDescriptions(LambdaList<Todo> list, int minLength) {
-		List<String> longDescriptions = new ArrayList<>();
-		for (Todo todo : list) {
-			String description = todo.description();
-			if (description.length() > minLength)
-				longDescriptions.add(description);
-		}
-		return longDescriptions;
+		return list.map(Todo::description)
+				.filter(description -> description.length() >= minLength);
 	}
 
 	public int noOfImportantTodos(LambdaList<Todo> list, Importance importance) {
-		int noOfImportantTodos = 0;
-		for (Todo todo : list)
-			if (todo.importance() == importance)
-				noOfImportantTodos++;
-		return noOfImportantTodos;
+		return list.filter(todo -> todo.importance() == importance)
+				.size();
 	}
 
 	public int charsToIntSum(LambdaList<String> list) {
-		int sum = 0;
-		for (String s : list)
-			if (s.length() == 1) {
-				char c = s.charAt(0);
-				sum += Character.getNumericValue(c);
-			}
-		return sum;
+		return list.filter(s -> s.length() == 1)
+				.map(s -> s.charAt(0))
+				.map(Character::getNumericValue)
+				.reduce(0, (i1, i2) -> i1 + i2);
 	}
 
 }

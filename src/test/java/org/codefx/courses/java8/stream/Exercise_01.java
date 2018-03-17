@@ -25,42 +25,42 @@ public class Exercise_01 {
 
 	// LAMBDA API
 
-//	@Test
-//	void forEachElement() {
-//		List<String> copy = new ArrayList<>();
-//
-//		list.forEachElement(copy::add);
-//
-//		assertThat(copy).containsExactlyElementsOf(list);
-//	}
+	@Test
+	void forEachElement() {
+		List<String> copy = new ArrayList<>();
 
-//	@Test
-//	void filter() {
-//		LambdaList<String> filtered = list.filter(s -> s.length() > 1);
-//
-//		assertThat(filtered).containsOnly("fx");
-//	}
+		list.forEachElement(copy::add);
 
-//	@Test
-//	void map() {
-//		LambdaList<String> filtered = list.map(s -> s + " ");
-//
-//		assertThat(filtered).containsOnly("c ", "o ", "d ", "e ", "fx ");
-//	}
+		assertThat(copy).containsExactlyElementsOf(list);
+	}
 
-//	@Test
-//	void reduce() {
-//		String reduced = list.reduce("", (s1, s2) -> s1 + s2);
-//
-//		assertThat(reduced).isEqualTo("codefx");
-//	}
+	@Test
+	void filter() {
+		LambdaList<String> filtered = list.filter(s -> s.length() > 1);
 
-//	@Test
-//	void collect() {
-//		HashSet<String> set = list.collect(HashSet::new);
-//
-//		assertThat(set).containsOnly("c", "o", "d", "e", "fx");
-//	}
+		assertThat(filtered).containsOnly("fx");
+	}
+
+	@Test
+	void map() {
+		LambdaList<String> filtered = list.map(s -> s + " ");
+
+		assertThat(filtered).containsOnly("c ", "o ", "d ", "e ", "fx ");
+	}
+
+	@Test
+	void reduce() {
+		String reduced = list.reduce("", (s1, s2) -> s1 + s2);
+
+		assertThat(reduced).isEqualTo("codefx");
+	}
+
+	@Test
+	void collect() {
+		HashSet<String> set = list.collect(HashSet::new);
+
+		assertThat(set).containsOnly("c", "o", "d", "e", "fx");
+	}
 
 	// LAMBDA USE
 
