@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import static java.time.ZonedDateTime.now;
 
@@ -24,6 +25,11 @@ public class OrderRepository {
 
 	public Optional<Order> loadOrder(int id) {
 		return Optional.ofNullable(ORDER_DB.get(id));
+	}
+
+	public Stream<Order> streamOrders() {
+		return loadOrderIds().stream()
+				.flatMap(orderId -> loadOrder(orderId).stream());
 	}
 
 	public static class Order {

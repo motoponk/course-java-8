@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class UserRepository {
 
@@ -20,6 +21,11 @@ public class UserRepository {
 
 	public Optional<User> loadUser(int id) {
 		return Optional.ofNullable(USER_DB.get(id));
+	}
+
+	public Stream<User> streamUsers() {
+		return loadUserIds().stream()
+				.flatMap(userId -> loadUser(userId).stream());
 	}
 
 	public static class User {
