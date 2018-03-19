@@ -7,8 +7,8 @@ import java.util.function.Supplier;
 public class Exercise_07 {
 
 	/*
-	 * TASK: Take a look at the various lambda expressions below and add
-	 *       a change them to method references.
+	 * TASK: Take a look at the various lambda expressions below and
+	 *       change them to method references.
 	 *
 	 * TASK: Recreate similar examples with the `Todo` instead of the `Type` class.
 	 */
