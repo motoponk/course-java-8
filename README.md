@@ -1,6 +1,6 @@
 # Java 8 From The Ground Up
 
-This course teaches you Java 8's mot important features.
+This course teaches you Java 8's most important features.
 
 ## Content
 
@@ -19,3 +19,5 @@ This course teaches you Java 8's mot important features.
 * [Exercise 1](src/test/java/org/codefx/courses/java8/stream/Exercise_01.java): Create Lambda-based collection processing API
 * [Exercise 2](src/test/java/org/codefx/courses/java8/stream/Exercise_02.java): Refactor use of self-made API to stream API
 * [Exercise 3](src/test/java/org/codefx/courses/java8/stream/Exercise_03.java): Solve problems with streams
+* [Exercise 4](src/test/java/org/codefx/courses/java8/stream/Exercise_04.java): Create stream from various sources
+* [Exercise 5](src/test/java/org/codefx/courses/java8/stream/Exercise_05.java): Use various collectors to gather stream results

@@ -60,7 +60,14 @@ public class Exercise_03 {
 //	void adder(){
 //		assertThat(adder.accumulate(asList(), 5)).isEqualTo(5);
 //		assertThat(adder.accumulate(asList(0), 5)).isEqualTo(0);
-//		assertThat(adder.accumulate(asList(0), 5)).isEqualTo(0);
+//		assertThat(adder.accumulate(asList(1, 5, 3), 5)).isEqualTo(9);
+//	}
+
+//	@Test
+//	void multiplier(){
+//		assertThat(multiplier.accumulate(asList(), 5)).isEqualTo(5);
+//		assertThat(multiplier.accumulate(asList(0), 5)).isEqualTo(0);
+//		assertThat(multiplier.accumulate(asList(1, 5, 3), 5)).isEqualTo(15);
 //	}
 
 }
