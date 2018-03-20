@@ -9,7 +9,14 @@ import org.codefx.courses.java8.stream.repo.OrderRepository.Order;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toMap;
+import static java.util.stream.Collectors.toSet;
 
 public class StreamCollectors {
 
@@ -17,33 +24,47 @@ public class StreamCollectors {
 	private final ItemRepository items = new ItemRepository();
 
 	public Set<Item> orderedItems() {
-		// reuse/copy the functionality you implemented in Exercise 03 to get a
-		// `Stream<Item>`; this exercise is only about collecting the elements!
-		throw new RuntimeException("Not yet implemented.");
+		return orders.loadOrderIds().stream()
+				.flatMap(id -> orders.loadOrder(id).stream())
+				.flatMap(order -> order.itemIds().stream())
+				.flatMap(id -> items.loadItem(id).stream())
+				.collect(toSet());
 	}
 
 	public Map<Integer, Order> ordersById() {
-		throw new RuntimeException("Not yet implemented.");
+		return orders.loadOrderIds().stream()
+				.flatMap(id -> orders.loadOrder(id).stream())
+				.collect(toMap(Order::id, order -> order));
 	}
 
 	public Map<Integer, List<Integer>> itemIdsByOrderId() {
-		throw new RuntimeException("Not yet implemented.");
+		return orders.loadOrderIds().stream()
+				.flatMap(id -> orders.loadOrder(id).stream())
+				.collect(toMap(Order::id, Order::itemIds));
 	}
 
 	public Map<Integer, Item> orderItemsByItemId() {
-		throw new RuntimeException("Not yet implemented.");
+		return orders.loadOrderIds().stream()
+				.flatMap(id -> orders.loadOrder(id).stream())
+				.flatMap(order -> order.itemIds().stream())
+				.flatMap(id -> items.loadItem(id).stream())
+				.collect(toMap(Item::id, item -> item));
 	}
 
 	public String descriptions(List<Todo> todos) {
-		throw new RuntimeException("Not yet implemented.");
+		return todos.stream()
+				.map(Todo::description)
+				.collect(joining(", "));
 	}
 
 	public Map<Importance, List<Todo>> todosByImportance(List<Todo> todos) {
-		throw new RuntimeException("Not yet implemented.");
+		return todos.stream().collect(groupingBy(Todo::importance));
 	}
 
 	public Map<Importance, String> descriptionsByImportance(List<Todo> todos) {
-		throw new RuntimeException("Not yet implemented.");
+		return todos.stream()
+				.map(todo -> Map.entry(todo.importance(), todo.description()))
+				.collect(groupingBy(Entry::getKey, mapping(Entry::getValue, joining(", "))));
 	}
 
 }

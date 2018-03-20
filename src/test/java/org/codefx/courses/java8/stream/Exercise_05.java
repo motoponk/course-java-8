@@ -34,64 +34,64 @@ public class Exercise_05 {
 
 	private final StreamCollectors collectors = new StreamCollectors();
 
-//	@Test
-//	void orderedItems() {
-//		assertThat(collectors.orderedItems()).extracting(Item::id).containsExactlyInAnyOrder(1, 2, 3);
-//	}
+	@Test
+	void orderedItems() {
+		assertThat(collectors.orderedItems()).extracting(Item::id).containsExactlyInAnyOrder(1, 2, 3);
+	}
 
-//	@Test
-//	void ordersById() {
-//		Map<Integer, Order> orders = collectors.ordersById();
-//
-//		SoftAssertions softly = new SoftAssertions();
-//		softly.assertThat(orders).hasSize(4);
-//		orders.forEach((id, order) -> softly
-//				.assertThat(order.id()).isEqualTo(id));
-//		softly.assertAll();
-//	}
+	@Test
+	void ordersById() {
+		Map<Integer, Order> orders = collectors.ordersById();
 
-//	@Test
-//	void itemIdsByOrderId() {
-//		Map<Integer, List<Integer>> itemIds = collectors.itemIdsByOrderId();
-//
-//		assertThat(itemIds).containsOnly(
-//				entry(1, List.of(1, 2)),
-//				entry(2, List.of(2, 3)),
-//				entry(3, List.of(1, 3)),
-//				entry(4, List.of(1)));
-//	}
+		SoftAssertions softly = new SoftAssertions();
+		softly.assertThat(orders).hasSize(4);
+		orders.forEach((id, order) -> softly
+				.assertThat(order.id()).isEqualTo(id));
+		softly.assertAll();
+	}
 
-//	@Test
-//	void orderedItemsById() {
-//		// WATCH OUT: Look at the contract of `Collectors.toMap` and
-//		//            learn why `orderedItemsById` throws an `IllegalStateException`
-//		assertThrows(IllegalStateException.class, collectors::orderItemsByItemId);
-//	}
+	@Test
+	void itemIdsByOrderId() {
+		Map<Integer, List<Integer>> itemIds = collectors.itemIdsByOrderId();
 
-//	@Test
-//	void descriptions() {
-//		assertThat(collectors.descriptions(todos)).isEqualTo("Groceries, Taxes, Laundry, Garage, Washing car");
-//	}
+		assertThat(itemIds).containsOnly(
+				entry(1, List.of(1, 2)),
+				entry(2, List.of(2, 3)),
+				entry(3, List.of(1, 3)),
+				entry(4, List.of(1)));
+	}
 
-//	@Test
-//	void todosByImportance() {
-//		Map<Importance, List<Todo>> todosByImportance = collectors.todosByImportance(todos);
-//
-//		assertThat(todosByImportance).containsOnly(
-//				entry(A_LITTLE, List.of(groceries, washingCar)),
-//				entry(SOMEWHAT, List.of(laundry)),
-//				entry(VERY, List.of(taxes, garage)));
-//	}
+	@Test
+	void orderedItemsById() {
+		// WATCH OUT: Look at the contract of `Collectors.toMap` and
+		//            learn why `orderedItemsById` throws an `IllegalStateException`
+		org.junit.jupiter.api.Assertions.assertThrows(IllegalStateException.class, collectors::orderItemsByItemId);
+	}
 
-//	@Test
-//	void descriptionsByImportance() {
-//		// WATCH OUT: This one is a tough nut to crack!
-//		Map<Importance, String> descriptionsByImportance = collectors.descriptionsByImportance(todos);
-//
-//		assertThat(descriptionsByImportance).containsOnly(
-//				entry(A_LITTLE, "Groceries, Washing car"),
-//				entry(SOMEWHAT, "Laundry"),
-//				entry(VERY, "Taxes, Garage"));
-//	}
+	@Test
+	void descriptions() {
+		assertThat(collectors.descriptions(todos)).isEqualTo("Groceries, Taxes, Laundry, Garage, Washing car");
+	}
+
+	@Test
+	void todosByImportance() {
+		Map<Importance, List<Todo>> todosByImportance = collectors.todosByImportance(todos);
+
+		assertThat(todosByImportance).containsOnly(
+				entry(A_LITTLE, List.of(groceries, washingCar)),
+				entry(SOMEWHAT, List.of(laundry)),
+				entry(VERY, List.of(taxes, garage)));
+	}
+
+	@Test
+	void descriptionsByImportance() {
+		// WATCH OUT: This one is a tough nut to crack!
+		Map<Importance, String> descriptionsByImportance = collectors.descriptionsByImportance(todos);
+
+		assertThat(descriptionsByImportance).containsOnly(
+				entry(A_LITTLE, "Groceries, Washing car"),
+				entry(SOMEWHAT, "Laundry"),
+				entry(VERY, "Taxes, Garage"));
+	}
 
 }
