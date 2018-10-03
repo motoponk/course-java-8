@@ -21,6 +21,15 @@ public class Report {
 	private final ItemRepository items = new ItemRepository();
 	private final AddressRepository addresses = new AddressRepository();
 
+	public void forEachOrderId(Consumer<Integer> processOrderId) {
+	}
+
+	public void forEachOptionalOrder(Consumer<Optional<Order>> processOptionalOrder) {
+	}
+
+	public void forEachOrder(Consumer<Order> processOrder) {
+	}
+
 	public void forEachOrderItem(Consumer<Item> processItem) {
 	}
 

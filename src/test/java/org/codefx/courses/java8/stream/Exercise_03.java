@@ -20,14 +20,46 @@ public class Exercise_03 {
 	 *          is pretty good; keep it open while solving these tasks.
 	 *
 	 * TASK: Uncomment the tests and implement the corresponding methods
-	 *       in `Report`. Feel free to extend the `...Repository` classes
-	 *       if that helps.
+	 *       in `Report`.
+	 *
+	 * HINT: Look out for repeating requests to the repositories (e.g. needing a Stream<User>) and
+	 *       feel free to extend the `...Repository` classes with such methods.
 	 *
 	 * HINT: The term "order-items" means items that were actually ordered and can include duplicates.
 	 *       Plain "items" can not have duplicates.
 	 */
 
 	private final Report report = new Report();
+
+//	@Test
+//	void forEachOrderId() {
+//		List<Integer> orderIds = new ArrayList<>();
+//
+//		report.forEachOrderId(orderIds::add);
+//
+//		assertThat(orderIds).containsExactlyInAnyOrder(1, 2, 3, 4);
+//	}
+
+//	@Test
+//	void forEachOptionalOrder() {
+//		List<Optional<Order>> orders = new ArrayList<>();
+//
+//		report.forEachOptionalOrder(orders::add);
+//
+//		assertThat(orders)
+//				.extracting(Optional::get)
+//				.extracting(Order::id)
+//				.containsExactlyInAnyOrder(1, 2, 3, 4);
+//	}
+
+//	@Test
+//	void forEachOrder() {
+//		List<Order> users = new ArrayList<>();
+//
+//		report.forEachOrder(users::add);
+//
+//		assertThat(users).extracting(Order::id).containsExactlyInAnyOrder(1, 2, 3);
+//	}
 
 //	@Test
 //	void forEachOrderItem() {
