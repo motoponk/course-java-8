@@ -33,45 +33,45 @@ public class Exercise_01 {
 	private final Translator translator = new NoOpEditor();
 	private final NoOpEditor nopOpEditor = new NoOpEditor();
 
-//	@Test
-//	public void translateText() {
-//		List<String> paragraph = List.of("This is the first sentence.", "And this the second one (hardly).");
-//
-//		List<String> translation = nopOpEditor.translate(paragraph);
-//
-//		assertThat(translation).isEqualTo(paragraph);
-//	}
+	@Test
+	public void translateText() {
+		List<String> paragraph = List.of("This is the first sentence.", "And this the second one (hardly).");
 
-//	@Test
-//	public void isNotInstanceMethod() {
-//		Throwable thrown = catchThrowable(()-> NoOpEditor.class.getDeclaredMethod("translate", List.class));
-//		assertThat(thrown)
-//				.as("It looks like you declared the method on `NoOpEditor`.")
-//				.isInstanceOf(Exception.class);
-//	}
+		List<String> translation = nopOpEditor.translate(paragraph);
 
-//	@Test
-//	public void isDefaultMethod() throws ReflectiveOperationException {
-//		Method translate = Translator.class.getMethod("translate", List.class);
-//		assertThat(translate.isDefault())
-//				.as("It looks like you did not declare `translate` as a default method on `Translator`.")
-//				.isTrue();
-//	}
+		assertThat(translation).isEqualTo(paragraph);
+	}
 
-//	@Test
-//	public void verifySentence() {
-//		boolean correct = translator.verify("This is a sentence");
-//
-//		assertThat(correct).isTrue();
-//	}
+	@Test
+	public void isNotInstanceMethod() {
+		Throwable thrown = catchThrowable(()-> NoOpEditor.class.getDeclaredMethod("translate", List.class));
+		assertThat(thrown)
+				.as("It looks like you declared the method on `NoOpEditor`.")
+				.isInstanceOf(Exception.class);
+	}
 
-//	@Test
-//	public void verifyText() {
-//		List<String> paragraph = List.of("This is the first sentence.", "And this the second one (hardly).");
-//
-//		boolean correct = translator.verify(paragraph);
-//
-//		assertThat(correct).isTrue();
-//	}
+	@Test
+	public void isDefaultMethod() throws ReflectiveOperationException {
+		Method translate = Translator.class.getMethod("translate", List.class);
+		assertThat(translate.isDefault())
+				.as("It looks like you did not declare `translate` as a default method on `Translator`.")
+				.isTrue();
+	}
+
+	@Test
+	public void verifySentence() {
+		boolean correct = translator.verify("This is a sentence");
+
+		assertThat(correct).isTrue();
+	}
+
+	@Test
+	public void verifyText() {
+		List<String> paragraph = List.of("This is the first sentence.", "And this the second one (hardly).");
+
+		boolean correct = translator.verify(paragraph);
+
+		assertThat(correct).isTrue();
+	}
 
 }
