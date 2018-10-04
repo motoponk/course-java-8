@@ -19,8 +19,8 @@ import static org.codefx.courses.java8.lambda.Todo.Importance.VERY;
 public class Exercise_05 {
 
 	/*
-	 * TASK: Take a look at https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html,
-	 *       uncomment the tests and implement the methods that make them pass.
+	 * TASK: Take a look at https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Collectors.html,
+	 *       uncomment the tests, and implement the methods that make them pass.
 	 */
 
 	private final Todo groceries = new Todo("Groceries", A_LITTLE);

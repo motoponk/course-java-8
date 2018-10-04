@@ -12,7 +12,7 @@ public class Exercise_02 {
 
 	/*
 	 * TASK: Create a copy of `LambdaListLoops` and call it `LambdaListStreams`.
-	 *       Then uncomment the tests below and make sure the are running.
+	 *       Then uncomment the tests below and make sure they are passing.
 	 *       After these preparations, refactor the code in `LambdaListStreams`
 	 *       to use Java 8 streams instead of the custom made `LambdaList`
 	 *       functionality.

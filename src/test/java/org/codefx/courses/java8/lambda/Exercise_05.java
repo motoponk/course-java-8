@@ -17,7 +17,7 @@ import java.util.function.UnaryOperator;
 public class Exercise_05 {
 
 	/*
-	 * TASK: Visit https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
+	 * TASK: Visit https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/package-summary.html
 	 *       and look for the most closely fitting functional interfaces to call the methods below.
 	 *       Use that to declare a field of that type for each method and use a lambda to populate it
 	 *       (see `printString` for an example).

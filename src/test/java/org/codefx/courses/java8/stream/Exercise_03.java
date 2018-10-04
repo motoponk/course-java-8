@@ -16,7 +16,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class Exercise_03 {
 
 	/*
-	 * OBSERVE: Javadoc for Stream at https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html
+	 * OBSERVE: Javadoc for Stream
+	 *          at https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/package-summary.html
+	 *          and https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html
 	 *          is pretty good; keep it open while solving these tasks.
 	 *
 	 * TASK: Uncomment the tests and implement the corresponding methods
