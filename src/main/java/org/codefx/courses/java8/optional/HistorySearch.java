@@ -28,7 +28,8 @@ public class HistorySearch {
 	// a history for a customer with that ID exists
 	// (if you found a customer, use `findHistory` to find their history)
 	public Optional<History> findCustomersHistory(int customerId) {
-		throw new RuntimeException("Not yet implemented.");
+		return customerSearch.findCustomer(customerId)
+				.flatMap(this::findHistory);
 	}
 
 	public static class History {

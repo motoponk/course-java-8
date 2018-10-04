@@ -40,19 +40,22 @@ public class CustomerSearch {
 	// return an `Optional` that is empty or not, depending on whether
 	// a customer with that ID and name exists
 	public Optional<Customer> findCustomerWithName(int id, String name) {
-		throw new RuntimeException("Not yet implemented.");
+		return findCustomer(id)
+				.filter(customer -> customer.name().equals(name));
 	}
 
 	// return an `Optional` that contains the customer's name and is empty or not,
 	// depending on whether a customer with that ID exists
 	public Optional<String> findCustomerName(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		return findCustomer(id)
+				.map(Customer::name);
 	}
 
 	// returns an existing customer with that ID or a newly created nameless one
 	// (use `createNamelessCustomer` for that)
 	public Optional<Customer> findOrCreateCustomer(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		return findCustomer(id)
+				.or(() -> createNamelessCustomer(id));
 	}
 
 	// returns a new customer if that ID is not yet used;

@@ -53,7 +53,11 @@ public class CustomerLogin {
 	// locate the customer and, if they are found, log them in;
 	// otherwise call Login::logFailedAttempt
 	public void logInCustomerOrLogFailedAttempt(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		search.findCustomer(id)
+				.ifPresentOrElse(
+						login::logIn,
+						() -> login.logFailedAttempt(id)
+				);
 	}
 
 }
