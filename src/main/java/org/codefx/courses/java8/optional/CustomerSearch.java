@@ -17,20 +17,20 @@ public class CustomerSearch {
 
 	// always return an empty `Optional`
 	public Optional<Customer> findNonExistingCustomer(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		return Optional.empty();
 	}
 
 	// return an `Optional`, but assume that the customer always exists
 	// and throw a `NullPointerException` if it doesn't
 	// (the combination of `Optional` and NPE doesn't make a lot of sense in real life)
 	public Optional<Customer> findExistingCustomer(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		return Optional.of(CUSTOMER_DB.get(id));
 	}
 
 	// return an `Optional` that is empty or not, depending on whether
 	// a customer with that ID exists
 	public Optional<Customer> findCustomer(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		return Optional.ofNullable(CUSTOMER_DB.get(id));
 	}
 
 	Customer determineReplacement(int id) {

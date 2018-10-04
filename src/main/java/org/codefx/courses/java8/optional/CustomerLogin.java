@@ -18,25 +18,36 @@ public class CustomerLogin {
 
 	// locate the customer and, if they are found, log them in
 	public void logInCustomerIfExists(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		Optional<Customer> customer = search.findCustomer(id);
+		if (customer.isPresent())
+			login.logIn(customer.orElseThrow());
 	}
 
 	// locate the customer and, if they are found, log them in;
 	// otherwise log in CustomerSearch.ANONYMOUS
 	public void logInCustomerOrAnonymous(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		Customer customer = search
+				.findCustomer(id)
+				.orElse(ANONYMOUS);
+		login.logIn(customer);
 	}
 
 	// locate the customer and, if they are found, log them in;
 	// otherwise log in CustomerSearch::determineReplacement
 	public void logInCustomerOrReplacement(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		Customer customer = search
+				.findCustomer(id)
+				.orElseGet(() -> search.determineReplacement(id));
+		login.logIn(customer);
 	}
 
 	// locate the customer and, if they are found, log them in;
 	// otherwise throw an IllegalArgumentExcpetion
 	public void logInCustomerOrThrowIllegalArgumentException(int id) {
-		throw new RuntimeException("Not yet implemented.");
+		Customer customer = search
+				.findCustomer(id)
+				.orElseThrow(IllegalArgumentException::new);
+		login.logIn(customer);
 	}
 
 	// locate the customer and, if they are found, log them in;
