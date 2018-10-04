@@ -35,4 +35,9 @@ public class CustomerLogin {
 	public void logInCustomerOrThrowIllegalArgumentException(int id) {
 	}
 
+	// locate the customer and, if they are found, log them in;
+	// otherwise throw an IllegalArgumentExcpetion
+	public void logInCustomerOrLogFailedAttempt(int id) {
+	}
+
 }

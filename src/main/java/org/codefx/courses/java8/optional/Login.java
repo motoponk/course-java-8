@@ -6,4 +6,6 @@ public interface Login {
 
 	void logIn(Customer customer);
 
+	void logFailedAttempt(int id);
+
 }

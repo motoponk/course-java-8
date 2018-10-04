@@ -7,6 +7,7 @@ import java.util.Optional;
 public class CustomerSearch {
 
 	public static final Customer ANONYMOUS = new Customer(0, "Anonymous");
+	public static final String NAMELESS = "Name Less";
 
 	private static final Map<Integer, Customer> CUSTOMER_DB = Map.of(
 			1, new Customer(1, "Jane Doe"),
@@ -34,6 +35,33 @@ public class CustomerSearch {
 
 	Customer determineReplacement(int id) {
 		return CUSTOMER_DB.get(id%3 + 1);
+	}
+
+	// return an `Optional` that is empty or not, depending on whether
+	// a customer with that ID and name exists
+	public Optional<Customer> findCustomerWithName(int id, String name) {
+		return null;
+	}
+
+	// return an `Optional` that contains the customer's name and is empty or not,
+	// depending on whether a customer with that ID exists
+	public Optional<String> findCustomerName(int id) {
+		return null;
+	}
+
+	// returns an existing customer with that ID or a newly created nameless one
+	// (use `createNamelessCustomer` for that)
+	public Customer findOrCreateCustomer(int id) {
+		return null;
+	}
+
+	// returns a new customer if that ID is not yet used;
+	// otherwise returns an empty `Optional`
+	public Optional<Customer> createNamelessCustomer(int id) {
+		if (CUSTOMER_DB.containsKey(id))
+			return Optional.empty();
+		else
+			return Optional.of(new Customer(id, NAMELESS));
 	}
 
 	public static class Customer {
