@@ -21,3 +21,7 @@ This course teaches you Java 8's most important features.
 * [Exercise 3](src/test/java/org/codefx/courses/java8/stream/Exercise_03.java): Solve problems with streams
 * [Exercise 4](src/test/java/org/codefx/courses/java8/stream/Exercise_04.java): Create stream from various sources
 * [Exercise 5](src/test/java/org/codefx/courses/java8/stream/Exercise_05.java): Use various collectors to gather stream results
+
+### Optional
+
+* [Exercise 1](src/test/java/org/codefx/courses/java8/optional/Exercise_01.java): Imperative use of `Optional`
