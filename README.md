@@ -26,3 +26,7 @@ This course teaches you Java 8's most important features.
 
 * [Exercise 1](src/test/java/org/codefx/courses/java8/optional/Exercise_01.java): Imperative use of `Optional`
 * [Exercise 2](src/test/java/org/codefx/courses/java8/optional/Exercise_02.java): Functional use of `Optional`
+
+### Default Methods
+
+* [Exercise 1](src/test/java/org/codefx/courses/java8/default_/Exercise_01.java): Syntax and resolution
