@@ -18,9 +18,7 @@ import javax.swing.event.HyperlinkEvent.EventType;
 import javax.swing.event.HyperlinkListener;
 
 import org.codefx.courses.java8.default_.decorator.AbstractHyperlinkListenerDecorator;
-import org.codefx.courses.java8.default_.decorator.LogEventsToConsole;
-import org.codefx.courses.java8.default_.decorator.OnHoverMakeComponentVisible;
-import org.codefx.courses.java8.default_.decorator.OnHoverSetUrlAsLabelText;
+import org.codefx.courses.java8.default_.decorator.DecoratingHyperlinkListener;
 
 public class Exercise_02 {
 
@@ -86,13 +84,13 @@ public class Exercise_02 {
 	}
 
 	private HyperlinkListener createHyperlinkListener() {
-		HyperlinkListener listener = this::changeHtmlViewBackgroundColor;
-		listener = new OnHoverMakeComponentVisible(listener, urlLabel);
-		listener = new OnHoverSetUrlAsLabelText(listener, urlLabel);
-		listener = new LogEventsToConsole(listener);
-		listener = new OnActivateHighlightComponent(listener, urlLabel);
-		listener = new OnEnterLogUrl(listener);
-		return listener;
+		return DecoratingHyperlinkListener
+				.from(this::changeHtmlViewBackgroundColor)
+				.onHoverMakeVisible(urlLabel)
+				.onHoverSetUrlOn(urlLabel)
+				.logEvents()
+				.decorate(l -> new OnActivateHighlightComponent(l, urlLabel))
+				.decorate(OnEnterLogUrl::new);
 	}
 
 	private void changeHtmlViewBackgroundColor(HyperlinkEvent event) {

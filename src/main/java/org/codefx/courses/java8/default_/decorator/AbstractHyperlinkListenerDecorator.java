@@ -8,7 +8,7 @@ import javax.swing.event.HyperlinkListener;
 /**
  * Abstract superclass to all decorators of {@link HyperlinkListener}.
  */
-public abstract class AbstractHyperlinkListenerDecorator implements HyperlinkListener {
+public abstract class AbstractHyperlinkListenerDecorator implements DecoratingHyperlinkListener {
 
 	private final HyperlinkListener decoratedListener;
 
