@@ -30,3 +30,4 @@ This course teaches you Java 8's most important features.
 ### Default Methods
 
 * [Exercise 1](src/test/java/org/codefx/courses/java8/default_/Exercise_01.java): Syntax and resolution
+* [Exercise_2](src/main/java/org/codefx/courses/java8/default_/decorator/Exercise_02.java): Fluent decorator pattern

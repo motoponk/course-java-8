@@ -1,0 +1,25 @@
+package org.codefx.courses.java8.default_.decorator;
+
+import java.util.Objects;
+
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
+
+/**
+ * Abstract superclass to all decorators of {@link HyperlinkListener}.
+ */
+public abstract class AbstractHyperlinkListenerDecorator implements HyperlinkListener {
+
+	private final HyperlinkListener decoratedListener;
+
+	protected AbstractHyperlinkListenerDecorator(HyperlinkListener decoratedListener) {
+		Objects.requireNonNull(decoratedListener, "The argument 'decoratedListener' must not be null.");
+		this.decoratedListener = decoratedListener;
+	}
+
+	@Override
+	public void hyperlinkUpdate(HyperlinkEvent event) {
+		decoratedListener.hyperlinkUpdate(event);
+	}
+
+}
