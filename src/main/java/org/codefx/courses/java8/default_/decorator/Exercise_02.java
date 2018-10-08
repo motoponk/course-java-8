@@ -1,4 +1,4 @@
-package org.codefx.lab.decorator;
+package org.codefx.courses.java8.default_.decorator;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
