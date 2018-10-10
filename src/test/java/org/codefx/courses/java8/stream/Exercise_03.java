@@ -60,7 +60,7 @@ public class Exercise_03 {
 //
 //		report.forEachOrder(users::add);
 //
-//		assertThat(users).extracting(Order::id).containsExactlyInAnyOrder(1, 2, 3);
+//		assertThat(users).extracting(Order::id).containsExactlyInAnyOrder(1, 2, 3, 4);
 //	}
 
 //	@Test

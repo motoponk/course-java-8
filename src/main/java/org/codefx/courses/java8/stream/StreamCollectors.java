@@ -9,14 +9,14 @@ import org.codefx.courses.java8.stream.repo.OrderRepository.Order;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
+import java.util.Set;
 
 public class StreamCollectors {
 
 	private final OrderRepository orders = new OrderRepository();
 	private final ItemRepository items = new ItemRepository();
 
-	public List<Item> orderedItems() {
+	public Set<Item> orderedItems() {
 		// reuse/copy the functionality you implemented in Exercise 03 to get a
 		// `Stream<Item>`; this exercise is only about collecting the elements!
 		throw new RuntimeException("Not yet implemented.");

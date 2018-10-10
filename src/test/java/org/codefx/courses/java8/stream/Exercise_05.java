@@ -5,6 +5,7 @@ import org.codefx.courses.java8.lambda.Todo;
 import org.codefx.courses.java8.lambda.Todo.Importance;
 import org.codefx.courses.java8.stream.repo.ItemRepository.Item;
 import org.codefx.courses.java8.stream.repo.OrderRepository.Order;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.codefx.courses.java8.lambda.Todo.Importance.A_LITTLE;
 import static org.codefx.courses.java8.lambda.Todo.Importance.SOMEWHAT;
 import static org.codefx.courses.java8.lambda.Todo.Importance.VERY;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Exercise_05 {
 
@@ -63,7 +65,7 @@ public class Exercise_05 {
 //	void orderedItemsById() {
 //		// WATCH OUT: Look at the contract of `Collectors.toMap` and
 //		//            learn why `orderedItemsById` throws an `IllegalStateException`
-//		org.junit.jupiter.api.Assertions.assertThrows(IllegalStateException.class, collectors::orderedItemsById);
+//		assertThrows(IllegalStateException.class, collectors::orderItemsByItemId);
 //	}
 
 //	@Test

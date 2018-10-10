@@ -11,7 +11,7 @@ import static java.time.ZonedDateTime.now;
 
 public class OrderRepository {
 
-	private static final Map<Integer, Order> USER_DB = Map.of(
+	private static final Map<Integer, Order> ORDER_DB = Map.of(
 			1, new Order(1, now().minusDays(20), 1, List.of(1, 2)),
 			2, new Order(2, now().minusDays(15), 1, List.of(2, 3)),
 			3, new Order(3, now().minusDays(10), 3, List.of(1, 3)),
@@ -19,11 +19,11 @@ public class OrderRepository {
 	);
 
 	public Set<Integer> loadOrderIds() {
-		return USER_DB.keySet();
+		return ORDER_DB.keySet();
 	}
 
 	public Optional<Order> loadOrder(int id) {
-		return Optional.ofNullable(USER_DB.get(id));
+		return Optional.ofNullable(ORDER_DB.get(id));
 	}
 
 	public static class Order {

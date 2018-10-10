@@ -5,14 +5,10 @@ import org.codefx.courses.java8.stream.repo.ItemRepository.Item;
 import org.codefx.courses.java8.stream.repo.OrderRepository.Order;
 import org.codefx.courses.java8.stream.repo.UserRepository.User;
 
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
 public class Report {
 
