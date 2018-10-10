@@ -17,20 +17,20 @@ public class CustomerSearch {
 
 	// always return an empty `Optional`
 	public Optional<Customer> findNonExistingCustomer(int id) {
-		return null;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	// return an `Optional`, but assume that the customer always exist
 	// and throw a NullPointerException if it doesn't
 	// (the combination of `Optional` and NPE doesn't make a lot of sense in real life)
 	public Optional<Customer> findExistingCustomer(int id) {
-		return null;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	// return an `Optional` that is empty or not, depending on whether
 	// a customer with that ID exists
 	public Optional<Customer> findCustomer(int id) {
-		return null;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	Customer determineReplacement(int id) {
@@ -40,19 +40,19 @@ public class CustomerSearch {
 	// return an `Optional` that is empty or not, depending on whether
 	// a customer with that ID and name exists
 	public Optional<Customer> findCustomerWithName(int id, String name) {
-		return null;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	// return an `Optional` that contains the customer's name and is empty or not,
 	// depending on whether a customer with that ID exists
 	public Optional<String> findCustomerName(int id) {
-		return null;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	// returns an existing customer with that ID or a newly created nameless one
 	// (use `createNamelessCustomer` for that)
 	public Customer findOrCreateCustomer(int id) {
-		return null;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	// returns a new customer if that ID is not yet used;

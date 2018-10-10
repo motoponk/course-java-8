@@ -22,55 +22,59 @@ public class Report {
 	private final AddressRepository addresses = new AddressRepository();
 
 	public void forEachOrderId(Consumer<Integer> processOrderId) {
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public void forEachOptionalOrder(Consumer<Optional<Order>> processOptionalOrder) {
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public void forEachOrder(Consumer<Order> processOrder) {
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public void forEachOrderItem(Consumer<Item> processItem) {
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public Optional<User> anyUserWithoutOrder() {
-		return Optional.empty();
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public long noOfOrdersWithItems(int noOfItems) {
-		return 0;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public boolean existsOrderWithAtLeastThreeItems() {
-		return false;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public Optional<Order> mostRecentOrder() {
-		return Optional.empty();
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public List<Address> addressesWithOrders() {
-		return List.of();
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public List<Item> threeMostRecentlyOrderedOrderItems() {
-		return List.of();
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	private Stream<Item> recentlyOrderedOrderItems() {
-		return Stream.of();
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public List<Item> mostRecentlyOrderedOrderItemsExceptFirstThree() {
-		return List.of();
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public List<User> usersByOldestOrder() {
-		return List.of();
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public String csvListOfOrderedItemDescriptionsLexicographicallySorted() {
-		return "";
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 }

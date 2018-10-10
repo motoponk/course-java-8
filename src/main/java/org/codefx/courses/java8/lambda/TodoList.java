@@ -22,12 +22,20 @@ public class TodoList {
 		return filtered;
 	}
 
+	public List<Todo> todosMoreImportantThan(Importance importance) {
+		throw new RuntimeException("Not yet implemented.");
+	}
+
 	public List<Todo> todosDueBy(ZonedDateTime time) {
 		List<Todo> filtered = new ArrayList<>();
 		for (Todo todo : todos)
 			if(todo.due().isBefore(time))
 				filtered.add(todo);
 		return filtered;
+	}
+
+	public List<Todo> todosDueAfter(ZonedDateTime time) {
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 }

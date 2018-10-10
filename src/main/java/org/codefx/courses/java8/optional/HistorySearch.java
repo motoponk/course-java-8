@@ -28,7 +28,7 @@ public class HistorySearch {
 	// a history for a customer with that ID exists
 	// (if you found a customer, use `findHistory` to find their history)
 	public Optional<History> findCustomersHistory(int customerId) {
-		return null;
+		throw new RuntimeException("Not yet implemented.");
 	}
 
 	public static class History {
