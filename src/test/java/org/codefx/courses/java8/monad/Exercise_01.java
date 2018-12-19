@@ -1,7 +1,6 @@
 package org.codefx.courses.java8.monad;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import java.util.function.Supplier;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Disabled
 public class Exercise_01 {
 
 	/*
@@ -55,11 +53,11 @@ public class Exercise_01 {
 	// API WRAPPER
 
 	private static <T> Lazy<T> create(Supplier<T> generator) {
-		return null;
+		return Lazy.of(generator);
 	}
 
 	private static <T> T getResource(Lazy<T> lazy) {
-		return null;
+		return lazy.get();
 	}
 
 	// TESTS
