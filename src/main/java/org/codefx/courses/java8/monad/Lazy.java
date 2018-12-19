@@ -40,4 +40,9 @@ public class Lazy<T> {
 		return Lazy.of(() -> function.apply(this.get()));
 	}
 
+	public <U> Lazy<U> flatMap(Function<? super T, ? extends Lazy<? extends U>> function) {
+		requireNonNull(function);
+		return Lazy.of(() -> function.apply(this.get()).get());
+	}
+
 }

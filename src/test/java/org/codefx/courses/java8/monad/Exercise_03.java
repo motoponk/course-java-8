@@ -1,7 +1,6 @@
 package org.codefx.courses.java8.monad;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -19,7 +18,6 @@ import java.util.function.Supplier;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Disabled
 public class Exercise_03 {
 
 	/*
@@ -39,15 +37,15 @@ public class Exercise_03 {
 	// API WRAPPER
 
 	private static <T> Lazy<T> create(Supplier<T> generator) {
-		return null;
+		return Lazy.of(generator);
 	}
 
 	private static <T> T getResource(Lazy<T> lazy) {
-		return null;
+		return lazy.get();
 	}
 
 	private static <T, U> Lazy<U> apply(Lazy<T> lazy, Function<T, Lazy<U>> function) {
-		return null;
+		return lazy.flatMap(function);
 	}
 
 	// TESTS
