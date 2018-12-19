@@ -27,6 +27,13 @@ This course teaches you Java 8's most important features.
 * [Exercise 1](src/test/java/org/codefx/courses/java8/optional/Exercise_01.java): Imperative use of `Optional`
 * [Exercise 2](src/test/java/org/codefx/courses/java8/optional/Exercise_02.java): Functional use of `Optional`
 
+### Monads
+
+* [Exercise 1](src/test/java/org/codefx/courses/java8/monad/Exercise_01.java): Creating `Lazy`
+* [Exercise 2](src/test/java/org/codefx/courses/java8/monad/Exercise_02.java): Mapping `Lazy`
+* [Exercise 3](src/test/java/org/codefx/courses/java8/monad/Exercise_03.java): FlatMapping `Lazy`
+* [Exercise 4](src/test/java/org/codefx/courses/java8/monad/Exercise_04.java): `Optional` is no monad
+
 ### Default Methods
 
 * [Exercise 1](src/test/java/org/codefx/courses/java8/default_/Exercise_01.java): Syntax and resolution
