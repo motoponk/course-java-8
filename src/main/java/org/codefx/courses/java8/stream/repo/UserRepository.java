@@ -1,5 +1,7 @@
 package org.codefx.courses.java8.stream.repo;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -8,11 +10,14 @@ import java.util.Set;
 
 public class UserRepository {
 
-	private static final Map<Integer, User> USER_DB = Map.of(
-			1, new User(1, "Jane Doe", List.of(1, 4)),
-			2, new User(2, "John Doe", List.of()),
-			3, new User(3, "Jimmy Doe", List.of(2, 3))
-	);
+	private static final Map<Integer, User> USER_DB;
+
+	static {
+		USER_DB = new HashMap<>();
+		USER_DB.put(1, new User(1, "Jane Doe", Arrays.asList(1, 4)));
+		USER_DB.put(2, new User(2, "John Doe", Arrays.asList()));
+		USER_DB.put(3, new User(3, "Jimmy Doe", Arrays.asList(2, 3)));
+	}
 
 	public Set<Integer> loadUserIds() {
 		return USER_DB.keySet();

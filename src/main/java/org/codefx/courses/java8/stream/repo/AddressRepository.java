@@ -1,5 +1,6 @@
 package org.codefx.courses.java8.stream.repo;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -7,12 +8,15 @@ import java.util.Set;
 
 public class AddressRepository {
 
-	private static final Map<Integer, Address> ADDRESS_DB = Map.of(
-			1, new Address(1, "Doe, Some Street #42, Country"),
-			2, new Address(2, "E-Corp, Evil Street #1, Country"),
-			3, new Address(3, "Good Bakery, Baker Street #23, Country"),
-			4, new Address(4, "Project Chaos, Paper Street #5, Country")
-	);
+	private static final Map<Integer, Address> ADDRESS_DB;
+
+	static {
+		ADDRESS_DB = new HashMap<>();
+		ADDRESS_DB.put(1, new Address(1, "Doe, Some Street #42, Country"));
+		ADDRESS_DB.put(2, new Address(2, "E-Corp, Evil Street #1, Country"));
+		ADDRESS_DB.put(3, new Address(3, "Good Bakery, Baker Street #23, Country"));
+		ADDRESS_DB.put(4, new Address(4, "Project Chaos, Paper Street #5, Country"));
+	}
 
 	public Set<Integer> loadAddressIds() {
 		return ADDRESS_DB.keySet();

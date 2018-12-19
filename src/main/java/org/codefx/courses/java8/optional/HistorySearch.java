@@ -2,6 +2,8 @@ package org.codefx.courses.java8.optional;
 
 import org.codefx.courses.java8.optional.CustomerSearch.Customer;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -9,10 +11,13 @@ import java.util.Optional;
 
 public class HistorySearch {
 
-	private static final Map<Integer, History> HISTORY_DB = Map.of(
-			1, new History(1, List.of("Logged in", "Logged out")),
-			2, new History(2, List.of("Logged in", "Purchased", "Logged out"))
-	);
+	private static final Map<Integer, History> HISTORY_DB;
+
+	static {
+		HISTORY_DB = new HashMap<>();
+		HISTORY_DB.put(1, new History(1, Arrays.asList("Logged in", "Logged out")));
+		HISTORY_DB.put(2, new History(2, Arrays.asList("Logged in", "Purchased", "Logged out")));
+	}
 
 	private final CustomerSearch customerSearch;
 

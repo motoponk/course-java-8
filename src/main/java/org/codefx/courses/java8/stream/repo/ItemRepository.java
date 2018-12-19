@@ -1,6 +1,7 @@
 package org.codefx.courses.java8.stream.repo;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -8,12 +9,15 @@ import java.util.Set;
 
 public class ItemRepository {
 
-	private static final Map<Integer, Item> ITEM_DB = Map.of(
-			1, new Item(1, "Shoes"),
-			2, new Item(2, "Book"),
-			3, new Item(3, "Flower"),
-			4, new Item(4, "CD")
-	);
+	private static final Map<Integer, Item> ITEM_DB;
+
+	static {
+		ITEM_DB = new HashMap<>();
+		ITEM_DB.put(1, new Item(1, "Shoes"));
+		ITEM_DB.put(2, new Item(2, "Book"));
+		ITEM_DB.put(3, new Item(3, "Flower"));
+		ITEM_DB.put(4, new Item(4, "CD"));
+	}
 
 	public Set<Integer> loadItemIds() {
 		return ITEM_DB.keySet();

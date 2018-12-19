@@ -8,10 +8,12 @@ import org.codefx.courses.java8.stream.repo.OrderRepository.Order;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.AbstractMap;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
-import static java.util.Map.entry;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.codefx.courses.java8.lambda.Todo.Importance.A_LITTLE;
 import static org.codefx.courses.java8.lambda.Todo.Importance.SOMEWHAT;
@@ -30,7 +32,7 @@ public class Exercise_05 {
 	private final Todo taxes = new Todo("Taxes", VERY);
 	private final Todo garage = new Todo("Garage", VERY);
 	private final Todo laundry = new Todo("Laundry", SOMEWHAT);
-	private final List<Todo> todos = List.of(groceries, taxes, laundry, garage, washingCar);
+	private final List<Todo> todos = Arrays.asList(groceries, taxes, laundry, garage, washingCar);
 
 	private final StreamCollectors collectors = new StreamCollectors();
 
@@ -55,10 +57,10 @@ public class Exercise_05 {
 //		Map<Integer, List<Integer>> itemIds = collectors.itemIdsByOrderId();
 //
 //		assertThat(itemIds).containsOnly(
-//				entry(1, List.of(1, 2)),
-//				entry(2, List.of(2, 3)),
-//				entry(3, List.of(1, 3)),
-//				entry(4, List.of(1)));
+//				entry(1, Arrays.asList(1, 2)),
+//				entry(2, Arrays.asList(2, 3)),
+//				entry(3, Arrays.asList(1, 3)),
+//				entry(4, Arrays.asList(1)));
 //	}
 
 //	@Test
@@ -78,9 +80,9 @@ public class Exercise_05 {
 //		Map<Importance, List<Todo>> todosByImportance = collectors.todosByImportance(todos);
 //
 //		assertThat(todosByImportance).containsOnly(
-//				entry(A_LITTLE, List.of(groceries, washingCar)),
-//				entry(SOMEWHAT, List.of(laundry)),
-//				entry(VERY, List.of(taxes, garage)));
+//				entry(A_LITTLE, Arrays.asList(groceries, washingCar)),
+//				entry(SOMEWHAT, Arrays.asList(laundry)),
+//				entry(VERY, Arrays.asList(taxes, garage)));
 //	}
 
 //	@Test
@@ -93,5 +95,9 @@ public class Exercise_05 {
 //				entry(SOMEWHAT, "Laundry"),
 //				entry(VERY, "Taxes, Garage"));
 //	}
+	
+	private static <K, V> Entry<K, V> entry(K key, V value) {
+		return new AbstractMap.SimpleEntry<>(key, value);
+	}
 
 }

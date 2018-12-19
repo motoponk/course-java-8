@@ -1,5 +1,6 @@
 package org.codefx.courses.java8.optional;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -9,11 +10,14 @@ public class CustomerSearch {
 	public static final Customer ANONYMOUS = new Customer(0, "Anonymous");
 	public static final String NAMELESS = "Name Less";
 
-	private static final Map<Integer, Customer> CUSTOMER_DB = Map.of(
-			1, new Customer(1, "Jane Doe"),
-			2, new Customer(2, "John Doe"),
-			3, new Customer(3, "Jimmy Doe")
-	);
+	private static final Map<Integer, Customer> CUSTOMER_DB;
+
+	static {
+		CUSTOMER_DB = new HashMap<>();
+		CUSTOMER_DB.put(1, new Customer(1, "Jane Doe"));
+		CUSTOMER_DB.put(2, new Customer(2, "John Doe"));
+		CUSTOMER_DB.put(3, new Customer(3, "Jimmy Doe"));
+	}
 
 	// always return an empty `Optional`
 	public Optional<Customer> findNonExistingCustomer(int id) {
