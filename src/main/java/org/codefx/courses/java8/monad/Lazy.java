@@ -35,4 +35,9 @@ public class Lazy<T> {
 		}
 	}
 
+	public <U> Lazy<U> map(Function<? super T, ? extends U> function) {
+		requireNonNull(function);
+		return Lazy.of(() -> function.apply(this.get()));
+	}
+
 }
