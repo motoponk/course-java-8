@@ -20,8 +20,8 @@ public class CustomerSearch {
 		throw new RuntimeException("Not yet implemented.");
 	}
 
-	// return an `Optional`, but assume that the customer always exist
-	// and throw a NullPointerException if it doesn't
+	// return an `Optional`, but assume that the customer always exists
+	// and throw a `NullPointerException` if it doesn't
 	// (the combination of `Optional` and NPE doesn't make a lot of sense in real life)
 	public Optional<Customer> findExistingCustomer(int id) {
 		throw new RuntimeException("Not yet implemented.");
@@ -51,7 +51,7 @@ public class CustomerSearch {
 
 	// returns an existing customer with that ID or a newly created nameless one
 	// (use `createNamelessCustomer` for that)
-	public Customer findOrCreateCustomer(int id) {
+	public Optional<Customer> findOrCreateCustomer(int id) {
 		throw new RuntimeException("Not yet implemented.");
 	}
 

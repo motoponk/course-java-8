@@ -24,8 +24,12 @@ public class Exercise_03 {
 	 * TASK: Uncomment the tests and implement the corresponding methods
 	 *       in `Report`.
 	 *
-	 * HINT: Look out for repeating requests to the repositories (e.g. needing a Stream<User>) and
-	 *       feel free to extend the `...Repository` classes with such methods.
+	 * HINT: Examine the `...Repository` classes and their various `load...` methods.
+	 *
+	 * HINT: Look out for repeating requests to the repositories (e.g. needing a `Stream<User>`) and
+	 *       feel free to extend the `...Repository` classes with such methods. If you do so, don't
+	 *       take shortcuts by letting your new methods operate on private fields - instead use the
+	 *       public API to implement them.
 	 *
 	 * HINT: The term "order-items" means items that were actually ordered and can include duplicates.
 	 *       Plain "items" can not have duplicates.
@@ -56,11 +60,11 @@ public class Exercise_03 {
 
 //	@Test
 //	void forEachOrder() {
-//		List<Order> users = new ArrayList<>();
+//		List<Order> orders = new ArrayList<>();
 //
-//		report.forEachOrder(users::add);
+//		report.forEachOrder(orders::add);
 //
-//		assertThat(users).extracting(Order::id).containsExactlyInAnyOrder(1, 2, 3, 4);
+//		assertThat(orders).extracting(Order::id).containsExactlyInAnyOrder(1, 2, 3, 4);
 //	}
 
 //	@Test
@@ -112,6 +116,7 @@ public class Exercise_03 {
 //	}
 
 //	@Test
+//	// three order-items from the most recent orders
 //	void threeMostRecentlyOrderedOrderItems() {
 //		List<Item> items = report.threeMostRecentlyOrderedOrderItems();
 //

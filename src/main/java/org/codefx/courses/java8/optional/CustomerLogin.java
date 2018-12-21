@@ -28,7 +28,7 @@ public class CustomerLogin {
 	}
 
 	// locate the customer and, if they are found, log them in;
-	// otherwise log in Customer::determineReplacement
+	// otherwise log in CustomerSearch::determineReplacement
 	public void logInCustomerOrReplacement(int id) {
 		throw new RuntimeException("Not yet implemented.");
 	}
@@ -40,7 +40,7 @@ public class CustomerLogin {
 	}
 
 	// locate the customer and, if they are found, log them in;
-	// otherwise throw an IllegalArgumentExcpetion
+	// otherwise call Login::logFailedAttempt
 	public void logInCustomerOrLogFailedAttempt(int id) {
 		throw new RuntimeException("Not yet implemented.");
 	}

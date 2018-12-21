@@ -13,6 +13,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 
@@ -82,10 +83,37 @@ public class Exercise_01 {
 //		CustomerSearch searchSpy = spy(new CustomerSearch());
 //		CustomerLogin login = new CustomerLogin(searchSpy, loginMock);
 //
+//		login.logInCustomerOrAnonymous(id);
+//
+//		if (id <= 3) {
+//			verify(loginMock, times(1)
+//					.description("logIn should be called"))
+//					.logIn(captor.capture());
+//			assertThat(captor.getValue().id())
+//					.as("logIn should be called with %d", id)
+//					.isEqualTo(id);
+//		} else {
+//			verify(loginMock, times(1)
+//					.description("logIn should be called"))
+//					.logIn(captor.capture());
+//			assertThat(captor.getValue().id())
+//					.as("logIn should be called with anonymous customer")
+//					.isEqualTo(ANONYMOUS.id());
+//		}
+//	}
+
+//	@ParameterizedTest(name = "id = {0}")
+//	@ValueSource(ints = { 1, 2, 3, 4, 5 })
+//	public void logInCustomerOrReplacement(int id) {
+//		CustomerSearch searchSpy = spy(new CustomerSearch());
+//		CustomerLogin login = new CustomerLogin(searchSpy, loginMock);
+//
 //		login.logInCustomerOrReplacement(id);
 //
 //		if (id <= 3) {
-//			verify(loginMock).logIn(captor.capture());
+//			verify(loginMock, times(1)
+//					.description("logIn should be called"))
+//					.logIn(captor.capture());
 //			assertThat(captor.getValue().id())
 //					.as("logIn should be called with %d", id)
 //					.isEqualTo(id);
@@ -93,7 +121,9 @@ public class Exercise_01 {
 //					.description("No need to call `determineReplacement` if there's a customer with that id. 😉"))
 //					.determineReplacement(anyInt());
 //		} else {
-//			verify(loginMock).logIn(captor.capture());
+//			verify(loginMock, times(1)
+//					.description("logIn should be called"))
+//					.logIn(captor.capture());
 //			assertThat(captor.getValue().id())
 //					.as("logIn should be called with replacement customer")
 //					.isEqualTo(id%3 + 1);

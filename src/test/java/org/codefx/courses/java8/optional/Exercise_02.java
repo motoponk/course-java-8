@@ -45,14 +45,14 @@ public class Exercise_02 {
 //			"2, Jane Doe, false", "2, John Doe, true",
 //			"4, Jane Doe, false", "5, John Doe, false"})
 //	public void findCustomerWithName(int id, String name, boolean exists) {
-//		Optional<Customer> customerWithName = customerSearch.findCustomerWithName(id, name);
+//		Optional<Customer> customer = customerSearch.findCustomerWithName(id, name);
 //
 //		if (exists) {
-//			assertThat(customerWithName).isPresent();
-//			assertThat(customerWithName.orElseThrow().id()).isEqualTo(id);
-//			assertThat(customerWithName.orElseThrow().name()).isEqualTo(name);
+//			assertThat(customer).isPresent();
+//			assertThat(customer).map(Customer::id).contains(id);
+//			assertThat(customer).map(Customer::name).contains(name);
 //		} else
-//			assertThat(customerWithName).isEmpty();
+//			assertThat(customer).isEmpty();
 //	}
 
 //	@ParameterizedTest(name = "id = {0}")
@@ -70,11 +70,12 @@ public class Exercise_02 {
 //	@ParameterizedTest(name = "id = {0}")
 //	@ValueSource(ints = { 1, 2, 3, 4, 5 })
 //	public void findOrCreateCustomer(int id) {
-//		Customer customer = customerSearch.findOrCreateCustomer(id);
+//		Optional<Customer> customer = customerSearch.findOrCreateCustomer(id);
 //
-//		assertThat(customer.id()).isEqualTo(id);
+//		assertThat(customer).isPresent();
+//		assertThat(customer).map(Customer::id).contains(id);
 //		if (id > 3) {
-//			assertThat(customer.name()).isEqualTo(CustomerSearch.NAMELESS);
+//			assertThat(customer).map(Customer::name).containsSame(CustomerSearch.NAMELESS);
 //		}
 //	}
 
@@ -85,7 +86,7 @@ public class Exercise_02 {
 //
 //		if (id <= 2) {
 //			assertThat(history).isPresent();
-//			assertThat(history.orElseThrow().customerId()).isEqualTo(id);
+//			assertThat(history).map(History::customerId).contains(id);
 //		} else {
 //			assertThat(history).isEmpty();
 //		}

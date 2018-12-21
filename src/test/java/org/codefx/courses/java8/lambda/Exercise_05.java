@@ -65,15 +65,15 @@ public class Exercise_05 {
 		return new Todo("");
 	}
 
-	private Todo withDescripton(String description) {
+	private Todo withDescription(String description) {
 		return new Todo(description);
 	}
 
-	private Todo withDescriptonAndDueDate(String description, ZonedDateTime due) {
+	private Todo withDescriptionAndDueDate(String description, ZonedDateTime due) {
 		return new Todo(description, due);
 	}
 
-	private Todo withDescriptonImportanceAndDueDate(String description, Importance importance, ZonedDateTime due) {
+	private Todo withDescriptionImportanceAndDueDate(String description, Importance importance, ZonedDateTime due) {
 		return new Todo(description, importance, due);
 	}
 
